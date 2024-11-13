@@ -1,0 +1,23 @@
+[package]
+name = "RustAPILogTutorial"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.6"
+tokio = { version = "1", features = ["full"] }
+tower = "0.4"
+tower-http = { version = "0.3", features = ["trace"] }
+tracing = "0.1"
+tracing-error = "0.2"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+serde = "1.0"
+serde_json = "1.0"
+jsonwebtoken = "8" # used for managing your JWT tokens
+dotenv = "0.15" # allows to manage your environment variables
+anyhow = "1.0" # gives you nice error stacks
+uuid = { version = "1", features = ["v4"] }
+
+[dev-dependencies]  # Dev dependencies for testing
+reqwest = { version = "0.11", features = ["blocking", "json"] }  # "blocking" for synchronous requests
+assert_matches = "1.1"
